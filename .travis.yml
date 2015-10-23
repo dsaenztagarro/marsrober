@@ -1,0 +1,16 @@
+language: ruby
+
+sudo: false
+
+rvm:
+  - 2.0.0
+  - 2.1
+  - 2.2
+  - ruby-head
+
+bundler_args: --without development --binstubs
+
+script:
+  - export COVERAGE=true
+  - bundle exec rake test:all
+  - bundle exec rake quality_metrics:all
