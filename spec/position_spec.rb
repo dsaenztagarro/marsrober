@@ -10,7 +10,7 @@ describe Position do
 
   describe '#to_s' do
     before :each do
-      orientation.stub(:to_char).and_return('N')
+      expect(orientation).to receive(:to_char).and_return('N')
     end
 
     it 'returns the string representation successfully' do
