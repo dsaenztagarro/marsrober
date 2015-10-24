@@ -1,18 +1,22 @@
-require_relative 'transforms'
+Given(/^a plateau on Mars with dimensions "(#{CAPTURE_DIMENSIONS})"$/) do |dim|
+  @planet = Planet.new(dim)
+end
 
-Given(/^a plateau on Mars with dimensions "(#{CAPTURE_DIMENSIONS})"$/) do |dimensions|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^NASA has a DSN station for managing communications$/) do
+  @network = DSN.new
+  @station = Station.new(name: 'station', network: @network)
 end
 
 Given(/^NASA deploys "(#{CAPTURE_ROBOT})" to position "(#{CAPTURE_POSITION})"$/) do |robot, position|
-  pending # Write code here that turns the phrase above into concrete actions
+  @rover = Rover.new(name: robot, network: @network, planet: @planet,
+                     position: position)
 end
 
-When(/^NASA sends instructions "(#{CAPTURE_INSTRUCTIONS})" to "(#{CAPTURE_ROBOT})"$/) do |instructions, robot|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^NASA sends instructions "(#{CAPTURE_INSTRUCTIONS})" to "(#{CAPTURE_ROBOT})"$/) do |str, robot|
+  instructions = str.split('').map { |char| Instruction.build(char) }
+  @station.notify(robot, instructions)
 end
 
-Then(/^it is expected to find "([^"]*)" at position "(#{CAPTURE_POSITION})"$/) do |arg1, position|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^DSN station reports the final position "(#{CAPTURE_POSITION})"$/) do |position|
+  expect(@station.report).to eq(position.to_s)
 end
-

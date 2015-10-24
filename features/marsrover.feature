@@ -1,11 +1,11 @@
 Feature: Robotic rover motions
 
-  Scenario Outline:
+  Scenario Outline: Deploy of individual rovers
     Given a plateau on Mars with dimensions "<Dimensions>"
-    And NASA has a Deep Space Network (DSN) station for managing communications
+    And NASA has a DSN station for managing communications
     And NASA deploys "<RobotCode>" to position "<StartPos>"
     When NASA sends instructions "<Instructions>" to "<RobotCode>"
-    Then it is expected to find "<RobotCode>" at position "<EndPos>"
+    Then DSN station reports the final position "<EndPos>"
 
   Examples:
     | Dimensions | RobotCode  | StartPos | Instructions | EndPos |
