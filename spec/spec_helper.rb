@@ -1,4 +1,3 @@
-require 'pry-byebug'
 require 'simplecov'
 SimpleCov.command_name 'test:units'
 
