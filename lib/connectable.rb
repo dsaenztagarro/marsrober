@@ -1,4 +1,4 @@
-# Represents the common interface for devices connected to a network
+# Represents the common interface for devices connected to a network (as DSN)
 # Examples: station, robotic rovers
 module Connectable
   # Notify a message to other device connected to the network

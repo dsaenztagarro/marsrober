@@ -17,7 +17,7 @@ Feature: Robotic rover squad motions
       | marsrover2 | MMRMMRMRRM   |
       | marsrover3 | MMMMMMMMM    |
       | marsrover4 | MLMMMMMM     |
-      | marsrover5 | MMMMMMM      |
+      | marsrover5 | MMMMMMMLM    |
       | marsrover6 | MMMMMMM      |
     Then it is expected to finally find robots at positions
       | RobotCode  | EndPos |

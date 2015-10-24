@@ -22,6 +22,7 @@ class Rover
     @planet.landed_by(self)
   end
 
+  # Execute instructions received and notificates final position to station
   # @param instructions [Array<String>] Array of characters
   def listen(instructions)
     instructions.each { |cmd| break unless process_instruction(cmd) }

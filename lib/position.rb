@@ -23,10 +23,18 @@ class Position
     @orientation = @orientation.dup
   end
 
+  # @return [String] The string representation of the position
   def to_s
     "#{@width} #{@height} #{@orientation.to_char}"
   end
 
+  # @param position [Position]
+  # @return [Boolean] Marks whether two positions have equal coordinates
+  def eql_coordinates?(position)
+    height == position.height && width == position.width
+  end
+
+  # @return [Position] The root position for all grids
   def self.zero
     Position.new(0, 0, Orientation.build('N'))
   end
