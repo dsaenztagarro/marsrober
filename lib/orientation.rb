@@ -43,7 +43,7 @@ class Orientation
     %w(north east south west)[@current - 1]
   end
 
-  # @return [String] The string representation of the object
+  # @return [String] The character representation of the orientation
   def to_char
     %w(N E S W)[@current - 1]
   end
