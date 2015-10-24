@@ -43,6 +43,11 @@ class Orientation
     %w(north east south west)[@current - 1]
   end
 
+  # @return [String] The string representation of the object
+  def to_char
+    %w(N E S W)[@current - 1]
+  end
+
   # @param value [String] A character: 'N' (north), 'E' (east'),
   #   'S' (south) or 'W' (west)
   # @return [Orientation] A new instance with the proper orientation

@@ -86,6 +86,7 @@ describe Orientation do
 
   ORIENTATION_WORDS = %w(NORTH EAST SOUTH WEST)
   ORIENTATION_CHARS = %w(N E S W)
+  ORIENTATION_VALUES = (1..4).to_a
 
   describe '#to_s' do
     ORIENTATION_WORDS.each_with_index do |word, index|
@@ -94,6 +95,18 @@ describe Orientation do
 
         it 'returns the expected string' do
           expect(orientation.to_s).to eq(word.downcase)
+        end
+      end
+    end
+  end
+
+  describe '#to_char' do
+    ORIENTATION_VALUES.each_with_index do |value, index|
+      context "when #{value}" do
+        let(:orientation) { Orientation.new(value) }
+
+        it 'returns the expected character' do
+          expect(orientation.to_char).to eq(ORIENTATION_CHARS[index])
         end
       end
     end
