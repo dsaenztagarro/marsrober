@@ -18,6 +18,7 @@ Rake tasks
 - `quality:reek`: run reek
 - `quality:cane`: run cane
 - `quality:all`: run all quality metric tasks
+- `quality:yardstick_measure`: run documentation coverage
 
 Coverage
 --------
@@ -28,6 +29,13 @@ To generate locally coverage report:
 export COVERAGE=true
 bundle exec rake test:all
 ```
+
+Conventions
+-----------
+
+- Two robotic rovers never are deployed to the same point
+- Once a rover finds an obstacle over the surface of Mars it discards any
+  instruction pending until engineers check what happens
 
 Dictionary
 ----------
