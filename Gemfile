@@ -7,6 +7,7 @@ group :development, :test do
   gem 'cane'
   gem 'reek'
   gem 'rubocop'
+  gem 'yardstick'
 end
 
 group :development do
@@ -22,6 +23,8 @@ group :development do
 end
 
 group :test do
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'codeclimate-test-reporter', require: nil
   gem 'coveralls', require: false
   gem 'cucumber'

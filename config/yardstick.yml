@@ -1,0 +1,17 @@
+---
+rules:
+  ApiTag::Presence:
+    enabled: false
+    exclude: []
+  ApiTag::Inclusion:
+    enabled: false
+    exclude: []
+  ApiTag::ProtectedMethod:
+    enabled: false
+    exclude: []
+  ApiTag::PrivateMethod:
+    enabled: false
+    exclude: []
+  ExampleTag:
+    enabled: false
+    exclude: []

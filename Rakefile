@@ -5,6 +5,8 @@ require 'cucumber/rake/task'
 require 'reek/rake/task'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
+require 'yardstick/rake/measurement'
+require 'yardstick/rake/verify'
 
 Coveralls::RakeTask.new
 
@@ -30,7 +32,19 @@ namespace :quality do
     cane.no_style = true
   end
 
-  task all: [:rubocop, :reek, :cane]
+  options = YAML.load_file('config/yardstick.yml')
+
+  desc 'measure coverage'
+  Yardstick::Rake::Measurement.new(:yardstick_measure, options) do |measurement|
+    measurement.output = 'measurement/report.txt'
+  end
+
+  desc 'verify coverage'
+  Yardstick::Rake::Verify.new do |verify|
+    verify.threshold = 100
+  end
+
+  task all: [:rubocop, :reek, :cane, :yardstick_measure]
 end
 
 namespace :test do
