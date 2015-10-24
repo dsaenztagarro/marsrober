@@ -10,6 +10,8 @@ describe Rover do
     @object = Rover.new(name: 'marsrover1', network: network, planet: planet)
   end
 
+  it_behaves_like 'is_connectable'
+
   describe '#listen' do
     it 'notifies to network with final position' do
       expect(network).to receive(:notify)
