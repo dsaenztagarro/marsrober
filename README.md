@@ -29,6 +29,11 @@ export COVERAGE=true
 bundle exec rake test:all
 ```
 
+Dictionary
+----------
+
+- `DSN`: Deep Space Network
+
 Documentation
 -------------
 
