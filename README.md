@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/dsaenztagarro/marsrober.svg?branch=master)](https://travis-ci.org/dsaenztagarro/marsrober)
+[![Code Climate](https://codeclimate.com/github/dsaenztagarro/marsrober/badges/gpa.svg)](https://codeclimate.com/github/dsaenztagarro/marsrober)
+[![Coverage Status](https://coveralls.io/repos/dsaenztagarro/marsrober/badge.svg?branch=master&service=github)](https://coveralls.io/github/dsaenztagarro/marsrober?branch=master)
+[![Dependency Status](https://gemnasium.com/dsaenztagarro/marsrober.svg)](https://gemnasium.com/dsaenztagarro/marsrober)
+
 # marsrover
 
 Branches
