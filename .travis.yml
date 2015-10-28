@@ -13,4 +13,4 @@ bundler_args: --without development --binstubs
 script:
   - export COVERAGE=true
   - bundle exec rake test:all
-  - bundle exec rake quality_metrics:all
+  - bundle exec rake quality:all
